@@ -24,7 +24,7 @@ namespace Companies.Persistance.Extensions
 					databaseService.CreateDatabase("Companies");
 
 					migrationService.ListMigrations();
-					migrationService.MigrateDown(20220519001);
+					migrationService.MigrateUp(202205230001);
 
 				}
 				catch

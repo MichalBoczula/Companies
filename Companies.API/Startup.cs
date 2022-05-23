@@ -31,10 +31,7 @@ namespace Companies.API
         {
             services.AddControllers();
 
-            services.AddPersistance();
-            services.AddFluentMigratorCore();
-
-            services.AddLogging(c => c.AddFluentMigratorConsole());
+            services.AddPersistance(Configuration);
 
             services.AddSwaggerGen(c =>
             {
