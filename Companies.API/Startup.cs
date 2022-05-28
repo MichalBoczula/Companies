@@ -1,3 +1,4 @@
+using Companies.Application.DependencyInjection;
 using Companies.Persistance.DependencyInjection;
 using FluentMigrator.Runner;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +33,7 @@ namespace Companies.API
             services.AddControllers();
 
             services.AddPersistance(Configuration);
+            services.AddApplication();
 
             services.AddSwaggerGen(c =>
             {
