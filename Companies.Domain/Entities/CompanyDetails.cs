@@ -13,5 +13,7 @@ namespace Companies.Domain.Entities
         public string History { get; set; }
         public string Offer { get; set; }
         public string Information { get; set; }
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
     }
 }

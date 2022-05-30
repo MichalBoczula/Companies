@@ -12,8 +12,6 @@ namespace Companies.Domain.Entities
         public string Name { get; set; }
         public string Sector { get; set; }
         public int EmployeesNumber { get; set; }
-        public int CompanyDetailsId { get; set; }
-        public CompanyDetails CompanyDetails { get; set; }
         public List<JobsOffer> Offers { get; set; }
         public List<Project> Projects { get; set; }
     }

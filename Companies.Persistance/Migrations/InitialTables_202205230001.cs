@@ -25,15 +25,15 @@ namespace Companies.Persistance.Migrations
                 .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
                 .WithColumn("Name").AsString(250).NotNullable()
                 .WithColumn("Sector").AsString(60).NotNullable()
-                .WithColumn("EmployeesNumber").AsInt32().NotNullable()
-                .WithColumn("CompanyDetailsId").AsInt32();
+                .WithColumn("EmployeesNumber").AsInt32().NotNullable();
 
             Create.Table("CompanyDetails")
                .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
                .WithColumn("Description").AsString(1000).Nullable()
                .WithColumn("History").AsString(1000).Nullable()
                .WithColumn("Offer").AsString(1000).Nullable()
-               .WithColumn("Information").AsString(1000).Nullable();
+               .WithColumn("Information").AsString(1000).Nullable()
+               .WithColumn("CompanyId").AsInt32();
 
             Create.Table("JobsOffers")
               .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
@@ -41,7 +41,7 @@ namespace Companies.Persistance.Migrations
               .WithColumn("IntegrationId").AsString(1000).Nullable().Indexed()
               .WithColumn("StatusId").AsInt32().NotNullable();
 
-            Create.Table("Project")
+            Create.Table("Projects")
               .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
               .WithColumn("Name").AsString(1000).Nullable()
               .WithColumn("Desc").AsString(1000).Nullable()
@@ -51,14 +51,14 @@ namespace Companies.Persistance.Migrations
                   .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
                   .WithColumn("Name").AsString(1000).Nullable();
 
-            Alter.Table("Companies")
-             .AlterColumn("CompanyDetailsId").AsInt32().Indexed().ForeignKey("CompanyDetails", "Id");
+            Alter.Table("CompanyDetails")
+             .AlterColumn("CompanyId").AsInt32().Indexed().ForeignKey("Companies", "Id");
 
             Alter.Table("JobsOffers")
               .AlterColumn("CompanyId").AsInt32().NotNullable().Indexed().ForeignKey("Companies", "Id")
               .AlterColumn("StatusId").AsInt32().NotNullable().Indexed().ForeignKey("JobStatuses", "Id");
 
-            Alter.Table("Project")
+            Alter.Table("Projects")
               .AlterColumn("CompanyId").AsInt32().NotNullable().Indexed().ForeignKey("Companies", "Id");
         }
     }
