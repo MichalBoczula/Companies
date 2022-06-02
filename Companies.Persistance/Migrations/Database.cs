@@ -1,4 +1,5 @@
 ﻿using Companies.Persistance.Contexts;
+using Companies.Persistance.Contexts.Concrete;
 using Dapper;
 using System;
 using System.Collections.Generic;

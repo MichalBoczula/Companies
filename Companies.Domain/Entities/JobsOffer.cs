@@ -9,7 +9,7 @@ namespace Companies.Domain.Entities
 {
     public class JobsOffer
     {
-        public int Id { get; set; }
+        public int JobsOfferId { get; set; }
         public int CompanyId { get; set; }
         public Company Company { get; set; }
         public string IntegrationId { get; set; }

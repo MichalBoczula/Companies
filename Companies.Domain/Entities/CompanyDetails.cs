@@ -8,11 +8,11 @@ namespace Companies.Domain.Entities
 {
     public class CompanyDetails
     {
-        public int Id { get; set; }
-        public string Description { get; set; }
-        public string History { get; set; }
-        public string Offer { get; set; }
-        public string Information { get; set; }
+        public int CompanyDetailsId { get; set; }
+        public string CompanyDetailsDescription { get; set; }
+        public string CompanyDetailsHistory { get; set; }
+        public string CompanyDetailsOffer { get; set; }
+        public string CompanyDetailsInformation { get; set; }
         public int CompanyId { get; set; }
         public Company Company { get; set; }
     }

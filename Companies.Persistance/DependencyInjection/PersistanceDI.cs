@@ -1,5 +1,9 @@
-﻿using Companies.Persistance.Context;
+﻿using Companies.Application.Contracts;
+using Companies.Persistance.Context;
 using Companies.Persistance.Contexts;
+using Companies.Persistance.Contexts.Abstract;
+using Companies.Persistance.Contexts.Concrete;
+using Companies.Persistance.Contexts.DataAccess;
 using FluentMigrator.Runner;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +27,8 @@ namespace Companies.Persistance.DependencyInjection
                 .ConfigureRunner(c => c.AddSqlServer2012()
                     .WithGlobalConnectionString(configuration.GetConnectionString("SqlConnection"))
                     .ScanIn(Assembly.GetExecutingAssembly()).For.Migrations());
+            services.AddTransient<IDapperContext, DapperContext>();
+            services.AddTransient<ICompanyRepository, CompanyRepository> ();
             return services;
         }
     }

@@ -8,9 +8,9 @@ namespace Companies.Domain.Entities
 {
     public class Project
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Desc { get; set; }
+        public int ProjectId { get; set; }
+        public string ProjectName { get; set; }
+        public string ProjectDesc { get; set; }
         public int CompanyId { get; set; }
         public Company Company { get; set; }
     }

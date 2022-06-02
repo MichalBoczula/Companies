@@ -8,10 +8,10 @@ namespace Companies.Domain.Entities
 {
     public class Company
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Sector { get; set; }
-        public int EmployeesNumber { get; set; }
+        public int CompanyId { get; set; }
+        public string CompanyName { get; set; }
+        public string CompanySector { get; set; }
+        public int CompanyEmployeesNumber { get; set; }
         public List<JobsOffer> Offers { get; set; }
         public List<Project> Projects { get; set; }
     }
