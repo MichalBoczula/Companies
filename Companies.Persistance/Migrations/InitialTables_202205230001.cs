@@ -22,44 +22,44 @@ namespace Companies.Persistance.Migrations
         public override void Up()
         {
             Create.Table("Companies")
-                .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
-                .WithColumn("Name").AsString(250).NotNullable()
-                .WithColumn("Sector").AsString(60).NotNullable()
-                .WithColumn("EmployeesNumber").AsInt32().NotNullable();
+                .WithColumn("CompanyId").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
+                .WithColumn("CompanyName").AsString(250).NotNullable()
+                .WithColumn("CompanySector").AsString(60).NotNullable()
+                .WithColumn("CompanyEmployeesNumber").AsInt32().NotNullable();
 
             Create.Table("CompanyDetails")
-               .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
-               .WithColumn("Description").AsString(1000).Nullable()
-               .WithColumn("History").AsString(1000).Nullable()
-               .WithColumn("Offer").AsString(1000).Nullable()
-               .WithColumn("Information").AsString(1000).Nullable()
+               .WithColumn("CompanyDetailsId").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
+               .WithColumn("CompanyDetailsDescription").AsString(1000).Nullable()
+               .WithColumn("CompanyDetailsHistory").AsString(1000).Nullable()
+               .WithColumn("CompanyDetailsOffer").AsString(1000).Nullable()
+               .WithColumn("CompanyDetailsInformation").AsString(1000).Nullable()
                .WithColumn("CompanyId").AsInt32();
 
             Create.Table("JobsOffers")
-              .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
+              .WithColumn("JobsOfferId").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
               .WithColumn("CompanyId").AsInt32().NotNullable()
               .WithColumn("IntegrationId").AsString(1000).Nullable().Indexed()
               .WithColumn("StatusId").AsInt32().NotNullable();
 
             Create.Table("Projects")
-              .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
-              .WithColumn("Name").AsString(1000).Nullable()
-              .WithColumn("Desc").AsString(1000).Nullable()
+              .WithColumn("ProjectId").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
+              .WithColumn("ProjectName").AsString(1000).Nullable()
+              .WithColumn("ProjectDesc").AsString(1000).Nullable()
               .WithColumn("CompanyId").AsInt32().NotNullable();
 
             Create.Table("JobStatuses")
-                  .WithColumn("Id").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
-                  .WithColumn("Name").AsString(1000).Nullable();
+                  .WithColumn("JobStatuseId").AsInt32().NotNullable().PrimaryKey().Identity().Indexed()
+                  .WithColumn("JobStatuseName").AsString(1000).Nullable();
 
             Alter.Table("CompanyDetails")
-             .AlterColumn("CompanyId").AsInt32().Indexed().ForeignKey("Companies", "Id");
+             .AlterColumn("CompanyId").AsInt32().Indexed().ForeignKey("Companies", "CompanyId");
 
             Alter.Table("JobsOffers")
-              .AlterColumn("CompanyId").AsInt32().NotNullable().Indexed().ForeignKey("Companies", "Id")
-              .AlterColumn("StatusId").AsInt32().NotNullable().Indexed().ForeignKey("JobStatuses", "Id");
+              .AlterColumn("CompanyId").AsInt32().NotNullable().Indexed().ForeignKey("Companies", "CompanyId")
+              .AlterColumn("StatusId").AsInt32().NotNullable().Indexed().ForeignKey("JobStatuses", "JobStatuseId");
 
             Alter.Table("Projects")
-              .AlterColumn("CompanyId").AsInt32().NotNullable().Indexed().ForeignKey("Companies", "Id");
+              .AlterColumn("CompanyId").AsInt32().NotNullable().Indexed().ForeignKey("Companies", "CompanyId");
         }
     }
 }

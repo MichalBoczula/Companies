@@ -15,38 +15,38 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Companies")
            .Row(new
            {
-               Name = "Software Solution",
-               Sector = "Software House",
-               EmployeesNumber = 100,
+               CompanyName = "Software Solution",
+               CompanySector = "Software House",
+               CompanyEmployeesNumber = 100,
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               Name = "Swiss Union Bank",
-               Sector = "Finance",
-               EmployeesNumber = 10000,
+               CompanyName = "Swiss Union Bank",
+               CompanySector = "Finance",
+               CompanyEmployeesNumber = 10000,
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               Name = "Creativity",
-               Sector = "Technology",
-               EmployeesNumber = 1000,
+               CompanyName = "Creativity",
+               CompanySector = "Technology",
+               CompanyEmployeesNumber = 1000,
 
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               Name = "It Opportunity",
-               Sector = "Technology",
-               EmployeesNumber = 2000,
+               CompanyName = "It Opportunity",
+               CompanySector = "Technology",
+               CompanyEmployeesNumber = 2000,
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               Name = "Soft Matter",
-               Sector = "Software House",
-               EmployeesNumber = 2000,
+               CompanyName = "Soft Matter",
+               CompanySector = "Software House",
+               CompanyEmployeesNumber = 2000,
            });
         }
 
@@ -56,37 +56,37 @@ namespace Companies.Persistance.Migrations
            .Row(new
            {
                Name = "Software Solution",
-               Sector = "Software House",
-               EmployeesNumber = 100,
+               CompanySector = "Software House",
+               CompanyEmployeesNumber = 100,
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "Swiss Union Bank",
-               Sector = "Finance",
-               EmployeesNumber = 10000,
+               CompanySector = "Finance",
+               CompanyEmployeesNumber = 10000,
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "Creativity",
-               Sector = "Technology",
-               EmployeesNumber = 1000,
+               CompanySector = "Technology",
+               CompanyEmployeesNumber = 1000,
 
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "It Opportunity",
-               Sector = "Technology",
-               EmployeesNumber = 2000,
+               CompanySector = "Technology",
+               CompanyEmployeesNumber = 2000,
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "Soft Matter",
-               Sector = "Software House",
-               EmployeesNumber = 2000,
+               CompanySector = "Software House",
+               CompanyEmployeesNumber = 2000,
            });
         }
     }

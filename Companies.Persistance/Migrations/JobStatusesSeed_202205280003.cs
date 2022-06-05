@@ -15,22 +15,22 @@ namespace Companies.Persistance.Migrations
           Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              Name = "New",
+              JobStatuseName = "New",
           });
             Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              Name = "Hot",
+              JobStatuseName = "Hot",
           });
             Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              Name = "Close",
+              JobStatuseName = "Close",
           });
             Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              Name = "Default",
+              JobStatuseName = "Default",
           });
         }
 
@@ -39,22 +39,22 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("JobStatuses")
            .Row(new
            {
-               Name = "New",
+               JobStatuseName = "New",
            });
             Delete.FromTable("JobStatuses")
           .Row(new
           {
-              Name = "Hot",
+              JobStatuseName = "Hot",
           });
             Delete.FromTable("JobStatuses")
           .Row(new
           {
-              Name = "Close",
+              JobStatuseName = "Close",
           });
             Delete.FromTable("JobStatuses")
           .Row(new
           {
-              Name = "Default",
+              JobStatuseName = "Default",
           });
         }
     }

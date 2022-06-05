@@ -21,36 +21,34 @@ namespace Companies.Persistance.Contexts.DataAccess
 
         public List<Company> GetCompaniesList()
         {
-            //string sql = @"select * from Companies as c
-            //            inner join Projects as p
-            //            on p.CompanyId = c.Id
-            //            inner join JobsOffers as jo
-            //            on jo.CompanyId = c.Id ";
-
-            string sql = @"select 
-	                        c.Id
-	                        ,c.Name	
-	                        ,c.Sector
-	                        ,c.EmployeesNumber	
-	                        ,p.Name	
-	                        ,p.[Desc]
-	                        ,p.CompanyId
-                        from Companies as c
-	                        inner join Projects as p
-		                        on p.CompanyId = c.Id";
+            string sql = @"SELECT
+	                           C.CompanyId
+                              ,C.CompanyName
+                              ,C.CompanySector
+                              ,C.CompanyEmployeesNumber
+	                          ,P.ProjectId
+                              ,P.ProjectName
+                              ,P.ProjectDesc
+                              ,P.CompanyId
+                          FROM Companies AS C
+                          INNER JOIN Projects AS P
+	                        ON P.CompanyId = C.CompanyId;";
 
             using var connection = _context.CreateConnection();
-            var orderDetails = connection.Query<Company, Project, Company>(
-                sql, 
-                (companies, project) =>
+
+            //var result2 = connection.Query<JobsOffer>(sql3);
+
+            var result = connection.Query<Company, JobsOffer, Company>(
+                sql,
+                (company, offer) =>
                 {
-                    companies.Projects = new List<Project>();
-                    companies.Projects.Add(project);
-                    return companies;
+                    company.Offers ??= new List<JobsOffer>();
+                    company.Offers.Add(offer);
+                    return company;
                 },
                 splitOn: "CompanyId"
             ).ToList();
-            return orderDetails;
+            return null;
         }
     }
 }
