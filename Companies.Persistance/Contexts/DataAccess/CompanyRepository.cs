@@ -19,36 +19,39 @@ namespace Companies.Persistance.Contexts.DataAccess
             _context = context;
         }
 
-        public List<Company> GetCompaniesList()
+        public async Task<List<Company>> GetCompaniesList()
         {
+            //string sql = @"SELECT
+	           //                C.CompanyId
+            //                  ,C.CompanyName
+	           //               ,P.ProjectId
+            //                  ,P.ProjectName
+            //                  ,P.CompanyId
+            //              FROM Companies AS C
+            //              INNER JOIN Projects AS P
+	           //             ON P.CompanyId = C.CompanyId;";
+
             string sql = @"SELECT
-	                           C.CompanyId
-                              ,C.CompanyName
-                              ,C.CompanySector
-                              ,C.CompanyEmployeesNumber
-	                          ,P.ProjectId
-                              ,P.ProjectName
-                              ,P.ProjectDesc
-                              ,P.CompanyId
+	                           C.*
+	                          ,P.*
                           FROM Companies AS C
                           INNER JOIN Projects AS P
 	                        ON P.CompanyId = C.CompanyId;";
 
             using var connection = _context.CreateConnection();
 
-            //var result2 = connection.Query<JobsOffer>(sql3);
-
-            var result = connection.Query<Company, JobsOffer, Company>(
+             var result = await connection.QueryAsync<Company, Project, Company>(
                 sql,
-                (company, offer) =>
+                (company, project) =>
                 {
-                    company.Offers ??= new List<JobsOffer>();
-                    company.Offers.Add(offer);
+                    company.Projects ??= new List<Project>();
+                    company.Projects.Add(project);
                     return company;
                 },
                 splitOn: "CompanyId"
-            ).ToList();
-            return null;
+            );
+
+            return result.ToList();
         }
     }
 }

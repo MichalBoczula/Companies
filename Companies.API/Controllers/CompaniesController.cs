@@ -1,5 +1,5 @@
 ﻿using Companies.API.Common;
-using Companies.Application.Features.Entities.Queries.CompanyDetails;
+using Companies.Application.Features.Entities.Queries.CompanyList;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace Companies.API.Controllers
         [HttpGet]
         public async Task<ActionResult> GetExperienceLevels()
         {
-            var vm = await Mediator.Send(new CompanyDeatailsQuery());
+            var vm = await Mediator.Send(new CompanyListQuery());
             return Ok(vm);
         }
     }
