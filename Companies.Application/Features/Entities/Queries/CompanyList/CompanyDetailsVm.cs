@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Companies.Application.Features.Entities.Queries.CompanyList
 {
-    public class ProjectVm
+    public class CompanyDetailsVm
     {
-        public string Name { get; set; }
+        public string CompanyName { get; set; }
+        public CompanyDetailsDto CompanyDetailsDto;
     }
 }

@@ -12,6 +12,5 @@ namespace Companies.Domain.Entities
         public string ProjectName { get; set; }
         public string ProjectDesc { get; set; }
         public int CompanyId { get; set; }
-        public Company Company { get; set; }
     }
 }

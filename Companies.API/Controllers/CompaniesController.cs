@@ -15,7 +15,7 @@ namespace Companies.API.Controllers
         [HttpGet]
         public async Task<ActionResult> GetExperienceLevels()
         {
-            var vm = await Mediator.Send(new CompanyListQuery());
+            var vm = await Mediator.Send(new CompanyDetailsQuery());
             return Ok(vm);
         }
     }

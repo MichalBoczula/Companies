@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Companies.Application.Features.Entities.Queries.CompanyList
 {
-    public class CompanyListQueryHandler : IRequestHandler<CompanyListQuery, HashSet<CompanyListVm>>
+    public class CompanyListQueryHandler : IRequestHandler<CompanyDetailsQuery, CompanyDetailsVm>
     {
         private readonly ICompanyRepository _context;
 
@@ -17,24 +17,13 @@ namespace Companies.Application.Features.Entities.Queries.CompanyList
         {
             _context = context;
         }
-
-        public async Task<HashSet<CompanyListVm>> Handle(CompanyListQuery request, CancellationToken cancellationToken)
+        
+        public async Task<CompanyDetailsVm> Handle(CompanyDetailsQuery request, CancellationToken cancellationToken)
         {
+            var result = await _context.GetCompanyDetails(1);
+             /// mapper
 
-            var query = await _context.GetCompaniesList();
-            var result = new HashSet<CompanyListVm>();
-
-            query.Select(x => x.CompanyName)
-                .Distinct()
-                .ToList()
-                .ForEach(x => result.Add(
-                    new CompanyListVm 
-                    { 
-                        CompanyName = x, 
-                        Projects = new List<ProjectVm>() 
-                    }));
-
-            return result;
+            return null;
         }
     }
 }

@@ -23,12 +23,12 @@ namespace Companies.Persistance.Extensions
 				{
 					databaseService.CreateDatabase("Companies");
 
-					migrationService.MigrateUp(202205230001);
-					migrationService.MigrateUp(202205280001);
-                    migrationService.MigrateUp(202205280002);
-                    migrationService.MigrateUp(202205280003);
-                    migrationService.MigrateUp(202205280004);
-                    migrationService.MigrateUp(202205280005);
+                    migrationService.MigrateUp(001);
+                    migrationService.MigrateUp(002);
+                    migrationService.MigrateUp(003);
+                    //               migrationService.MigrateUp(202205280003);
+                    //               migrationService.MigrateUp(202205280004);
+                    //               migrationService.MigrateUp(202205280005);
                 }
 				catch
 				{

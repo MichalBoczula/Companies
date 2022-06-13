@@ -7,46 +7,46 @@ using System.Threading.Tasks;
 
 namespace Companies.Persistance.Migrations
 {
-    [Migration(202205280001)]
-    public class CompanySeed_202205280001 : Migration
+    [Migration(002)]
+    public class CompanySeed_002 : Migration
     {
         public override void Up()
         {
             Insert.IntoTable("Companies")
            .Row(new
            {
-               CompanyName = "Software Solution",
-               CompanySector = "Software House",
-               CompanyEmployeesNumber = 100,
+               Name = "Software Solution",
+               Sector = "Software House",
+               EmployeesNumber = 100,
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               CompanyName = "Swiss Union Bank",
-               CompanySector = "Finance",
-               CompanyEmployeesNumber = 10000,
+               Name = "Swiss Union Bank",
+               Sector = "Finance",
+               EmployeesNumber = 10000,
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               CompanyName = "Creativity",
-               CompanySector = "Technology",
-               CompanyEmployeesNumber = 1000,
+               Name = "Creativity",
+               Sector = "Technology",
+               EmployeesNumber = 1000,
 
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               CompanyName = "It Opportunity",
-               CompanySector = "Technology",
-               CompanyEmployeesNumber = 2000,
+               Name = "It Opportunity",
+               Sector = "Technology",
+               EmployeesNumber = 2000,
            });
             Insert.IntoTable("Companies")
            .Row(new
            {
-               CompanyName = "Soft Matter",
-               CompanySector = "Software House",
-               CompanyEmployeesNumber = 2000,
+               Name = "Soft Matter",
+               Sector = "Software House",
+               EmployeesNumber = 2000,
            });
         }
 
@@ -56,37 +56,37 @@ namespace Companies.Persistance.Migrations
            .Row(new
            {
                Name = "Software Solution",
-               CompanySector = "Software House",
-               CompanyEmployeesNumber = 100,
+               Sector = "Software House",
+               EmployeesNumber = 100,
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "Swiss Union Bank",
-               CompanySector = "Finance",
-               CompanyEmployeesNumber = 10000,
+               Sector = "Finance",
+               EmployeesNumber = 10000,
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "Creativity",
-               CompanySector = "Technology",
-               CompanyEmployeesNumber = 1000,
+               Sector = "Technology",
+               EmployeesNumber = 1000,
 
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "It Opportunity",
-               CompanySector = "Technology",
-               CompanyEmployeesNumber = 2000,
+               Sector = "Technology",
+               EmployeesNumber = 2000,
            });
             Delete.FromTable("Companies")
            .Row(new
            {
                Name = "Soft Matter",
-               CompanySector = "Software House",
-               CompanyEmployeesNumber = 2000,
+               Sector = "Software House",
+               EmployeesNumber = 2000,
            });
         }
     }
