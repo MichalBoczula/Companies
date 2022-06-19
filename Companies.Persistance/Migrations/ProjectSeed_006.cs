@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Companies.Persistance.Migrations
 {
-    [Migration(202205280005)]
-    public class ProjectSeed_202205280005 : Migration
+    [Migration(006)]
+    public class ProjectSeed_006 : Migration
     {
         public override void Up()
         {
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Localization API",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Localization API",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -25,8 +25,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Data Transfer",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Data Transfer",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -35,8 +35,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Management System",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Management System",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -45,8 +45,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Jobs Board",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Jobs Board",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -55,8 +55,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Social Media",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Social Media",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -65,8 +65,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Offer Board",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Offer Board",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -76,8 +76,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Platform for exchange currency",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Platform for exchange currency",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -86,8 +86,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "External data exchanger",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "External data exchanger",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -97,8 +97,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Music Maker",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Music Maker",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -107,8 +107,8 @@ namespace Companies.Persistance.Migrations
             Insert.IntoTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Order food platform",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Order food platform",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -121,8 +121,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Localization API",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Localization API",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -131,8 +131,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Data Transfer",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Data Transfer",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -141,8 +141,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Management System",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Management System",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -151,8 +151,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Jobs Board",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Jobs Board",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -161,8 +161,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Social Media",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Social Media",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -171,8 +171,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Offer Board",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Offer Board",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -182,8 +182,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Platform for exchange currency",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Platform for exchange currency",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -192,8 +192,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "External data exchanger",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "External data exchanger",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -203,8 +203,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Music Maker",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Music Maker",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",
@@ -213,8 +213,8 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("Projects")
                 .Row(new
                 {
-                    ProjectName = "Order food platform",
-                    ProjectDesc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
+                    Name = "Order food platform",
+                    Desc = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, metus id laoreet ultrices, mi purus venenatis magna," +
                     " tempor efficitur purus est eu sapien. Nam ullamcorper iaculis urna ut dictum. Nam elementum molestie tristique. " +
                     "Morbi porta feugiat sollicitudin. Maecenas facilisis sapien vitae nisi venenatis, eget posuere mi semper. " +
                     "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec quam leo.",

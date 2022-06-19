@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Companies.Persistance.Migrations
 {
-    [Migration(202205280004)]
-    public class JobsOfferSeed_202205280004 : Migration
+    [Migration(005)]
+    public class JobsOfferSeed_005 : Migration
     {
         public override void Up()
         {

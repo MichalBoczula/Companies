@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace Companies.Persistance.Migrations
 {
-    [Migration(202205280003)]
-    public class JobStatusesSeed_202205280003 : Migration
+    [Migration(004)]
+    public class JobStatusesSeed_004 : Migration
     {
         public override void Up()
         {
           Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              JobStatuseName = "New",
+              Name = "New",
           });
             Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              JobStatuseName = "Hot",
+              Name = "Hot",
           });
             Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              JobStatuseName = "Close",
+              Name = "Close",
           });
             Insert.IntoTable("JobStatuses")
           .Row(new
           {
-              JobStatuseName = "Default",
+              Name = "Default",
           });
         }
 
@@ -39,22 +39,22 @@ namespace Companies.Persistance.Migrations
             Delete.FromTable("JobStatuses")
            .Row(new
            {
-               JobStatuseName = "New",
+               Name = "New",
            });
             Delete.FromTable("JobStatuses")
           .Row(new
           {
-              JobStatuseName = "Hot",
+              Name = "Hot",
           });
             Delete.FromTable("JobStatuses")
           .Row(new
           {
-              JobStatuseName = "Close",
+              Name = "Close",
           });
             Delete.FromTable("JobStatuses")
           .Row(new
           {
-              JobStatuseName = "Default",
+              Name = "Default",
           });
         }
     }

@@ -26,9 +26,9 @@ namespace Companies.Persistance.Extensions
                     migrationService.MigrateUp(001);
                     migrationService.MigrateUp(002);
                     migrationService.MigrateUp(003);
-                    //               migrationService.MigrateUp(202205280003);
-                    //               migrationService.MigrateUp(202205280004);
-                    //               migrationService.MigrateUp(202205280005);
+                    migrationService.MigrateUp(004);
+                    migrationService.MigrateUp(005);
+                    migrationService.MigrateUp(006);
                 }
 				catch
 				{
