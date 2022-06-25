@@ -9,6 +9,7 @@ namespace Companies.Application.Contracts
 {
     public interface ICompanyRepository
     {
-        Task<Company> GetCompanyDetails(int companyId);
+        Task<Company> GetCompanyDetailsAsync(int companyId);
+        Task<int> AddCompanyAsync(Company company);
     }
 }

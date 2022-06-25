@@ -21,11 +21,12 @@ namespace Companies.API
 
             try
             {
-                Log.Information("Application is starting up");
+                Log.Information("Application is starting up2");
                 CreateHostBuilder(args)
-               .Build()
-               .MigrateDatabase()
-               .Run();
+                    .UseSerilog()
+                    .Build()
+                    .MigrateDatabase()
+                    .Run();
             }
             catch
             {

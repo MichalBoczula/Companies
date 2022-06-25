@@ -23,7 +23,7 @@ namespace Companies.Application.Features.Entities.Queries.CompanyDetails
 
         public async Task<CompanyDetailsVm> Handle(CompanyDetailsQuery request, CancellationToken cancellationToken)
         {
-            var query = await _context.GetCompanyDetails(request.CompanyId);
+            var query = await _context.GetCompanyDetailsAsync(request.CompanyId);
             var result = _mapper.Map<CompanyDetailsVm>(query);
             return result;
         }

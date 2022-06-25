@@ -19,7 +19,7 @@ namespace Companies.Persistance.Contexts.DataAccess
             _context = context;
         }
 
-        public async Task<Company> GetCompanyDetails(int companyId)
+        public async Task<Company> GetCompanyDetailsAsync(int companyId)
         {
             using var connection = _context.CreateConnection();
 
@@ -37,6 +37,28 @@ namespace Companies.Persistance.Contexts.DataAccess
             company.Projects= projects;
 
             return company;
+        }
+
+        public async Task<int> AddCompanyAsync(Company company)
+        {
+            using var connection = _context.CreateConnection();
+
+            var sql = $@"INSERT INTO [dbo].[Companies]
+                               ([Name]
+                               ,[Sector]
+                               ,[EmployeesNumber])
+		                       OUTPUT INSERTED.[Id]
+                         VALUES
+                               (@name
+                               ,@sector
+                               ,@empNumber);";
+
+            var result = 
+                await connection.QueryAsync<int>(
+                    sql, 
+                new { name = company.Name, sector = company.Sector, empNumber = company.EmployeesNumber });
+
+            return result.FirstOrDefault();
         }
     }
 }

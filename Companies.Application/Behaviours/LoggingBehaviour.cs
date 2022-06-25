@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Companies.Application.Behaviour
+namespace Companies.Application.Behaviours
 {
     public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest>
     {
@@ -21,9 +21,8 @@ namespace Companies.Application.Behaviour
         public async Task Process(TRequest request, CancellationToken cancellationToken)
         {
             var requestName = typeof(TRequest).Name;
-            await Task.Run(() =>
-                   _logger.LogInformation("JobsCatalog Request: {Name} {@Request}",
-                   requestName, request), cancellationToken);
+            _logger.LogInformation("Request: {Name} {@Request}",
+            requestName, request);
         }
     }
 }

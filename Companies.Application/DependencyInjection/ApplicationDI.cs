@@ -1,4 +1,4 @@
-﻿using Companies.Application.Behaviour;
+﻿using Companies.Application.Behaviours;
 using FluentValidation;
 using MediatR;
 using MediatR.Pipeline;
@@ -19,7 +19,6 @@ namespace Companies.Application.DependencyInjection
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            ValidatorOptions.Global.LanguageManager.Enabled = false;
             //PreProcessor
             services.AddTransient(typeof(IRequestPreProcessor<>), typeof(LoggingBehaviour<>));
             //Pipeline
