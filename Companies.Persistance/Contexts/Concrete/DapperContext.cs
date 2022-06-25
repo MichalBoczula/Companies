@@ -26,7 +26,5 @@ namespace Companies.Persistance.Contexts.Concrete
             => new SqlConnection(_configuration.GetConnectionString("SqlConnection"));
         public IDbConnection CreateMasterConnection()
             => new SqlConnection(_configuration.GetConnectionString("MasterConnection"));
-
-        
     }
 }

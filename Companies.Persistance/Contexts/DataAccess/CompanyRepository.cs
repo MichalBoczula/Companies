@@ -60,5 +60,55 @@ namespace Companies.Persistance.Contexts.DataAccess
 
             return result.FirstOrDefault();
         }
+
+        public async Task<int> DeleteCompanyByIdAsync(int companyId)
+        {
+            using var connection = _context.CreateConnection();
+
+            var sql = $@"delete from Companies
+                        OUTPUT DELETED.[Id]
+                        where Id = @companyId";
+
+            var result =
+                await connection.QueryAsync<int>(
+                    sql,
+                new { companyId });
+
+            return result.FirstOrDefault();
+        }
+
+        public async Task<int> UpdateCompanyAsync(Company model)
+        {
+            using var connection = _context.CreateConnection();
+
+            var sql = $@"UPDATE C
+                       SET C.Name = @name
+                          ,C.Sector = @sector
+                          ,C.EmployeesNumber = @empNumber
+                       FROM Companies AS C WITH(NOLOCK)
+                       WHERE Id = @companyId;";
+
+            var result =
+                await connection.ExecuteAsync(
+                    sql,
+                new { companyId = model.Id ,name = model.Name, sector = model.Sector, empNumber = model.EmployeesNumber });
+
+            return result;
+        }
+
+        public async Task<bool> CheckIfCompanyExistAsync(int companyId)
+        {
+            using var connection = _context.CreateConnection();
+
+            var sql = $@"SELECT 1 FROM Companies AS C WITH(NOLOCK)
+                        WHERE C.Id = @companyId;";
+
+            var result =
+                await connection.QueryAsync<bool>(
+                    sql,
+                new { companyId });
+
+            return result.FirstOrDefault();
+        }
     }
 }

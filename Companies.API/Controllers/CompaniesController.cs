@@ -1,5 +1,7 @@
 ﻿using Companies.API.Common;
 using Companies.Application.Features.Entities.Commands.Companies.AddCompany;
+using Companies.Application.Features.Entities.Commands.Companies.DeleteCompany;
+using Companies.Application.Features.Entities.Commands.Companies.UpdateCompany;
 using Companies.Application.Features.Entities.Queries.CompanyDetails;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +26,20 @@ namespace Companies.API.Controllers
         public async Task<ActionResult> AddCompany(AddCompanyExternal model)
         {
             var vm = await Mediator.Send(new AddCompanyCommand() { Model = model });
+            return Ok(vm);
+        }
+
+        [HttpDelete("{companyId}")]
+        public async Task<ActionResult> DeleteCompany(int companyId)
+        {
+            var vm = await Mediator.Send(new DeleteCompanyCommand() { CompanyId = companyId});
+            return Ok(vm);
+        }
+
+        [HttpPut("{companyId}")]
+        public async Task<ActionResult> UpdateCompany([FromBody]UpdateCompanyExternal model, [FromRoute] int companyId)
+        {
+            var vm = await Mediator.Send(new UpdateCompanyCommand() { CompanyId = companyId, Model = model});
             return Ok(vm);
         }
     }

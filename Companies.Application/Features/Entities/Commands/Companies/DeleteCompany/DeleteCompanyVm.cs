@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Companies.Application.Features.Entities.Commands.Companies.DeleteCompany
 {
-    class DeleteCompanyQuery
+    public class DeleteCompanyVm
     {
+        public int CompanyId { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Companies.Application.Behaviours
 {
-    public class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest>
+    internal class LoggingBehaviour<TRequest> : IRequestPreProcessor<TRequest>
     {
         private readonly ILogger _logger;
 

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Companies.Application.Features.Entities.Commands.Companies.UpdateCompany
 {
-    class UpdateCompanyQueryHandler
+    public class UpdateCompanyVm
     {
+        public int CompanyId { get; set; }
     }
 }

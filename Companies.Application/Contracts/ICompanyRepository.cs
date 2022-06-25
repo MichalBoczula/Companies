@@ -11,5 +11,8 @@ namespace Companies.Application.Contracts
     {
         Task<Company> GetCompanyDetailsAsync(int companyId);
         Task<int> AddCompanyAsync(Company company);
+        Task<int> DeleteCompanyByIdAsync(int companyId);
+        Task<int> UpdateCompanyAsync(Company model);
+        Task<bool> CheckIfCompanyExistAsync(int companyId);
     }
 }
