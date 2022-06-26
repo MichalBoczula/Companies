@@ -40,7 +40,7 @@ namespace Companies.API.Controllers
         public async Task<ActionResult> UpdateCompany([FromBody]UpdateCompanyExternal model, [FromRoute] int companyId)
         {
             var vm = await Mediator.Send(new UpdateCompanyCommand() { CompanyId = companyId, Model = model});
-            return Ok(vm);
+            return vm.Errors is null ?  BadRequest(vm): Ok(vm);
         }
     }
 }

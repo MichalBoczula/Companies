@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,6 @@ namespace Companies.Application.Features.Entities.Commands.Companies.UpdateCompa
     public class UpdateCompanyVm
     {
         public int CompanyId { get; set; }
+        public List<ValidationFailure> Errors { get; set; }
     }
 }

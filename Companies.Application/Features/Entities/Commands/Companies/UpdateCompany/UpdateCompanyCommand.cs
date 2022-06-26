@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Companies.Application.Features.Entities.Commands.Companies.UpdateCompany
 {
-    public class UpdateCompanyCommand : IRequest<int>
+    public class UpdateCompanyCommand : IRequest<UpdateCompanyVm>
     {
         public int CompanyId { get; set; }
         public UpdateCompanyExternal Model { get; set; }

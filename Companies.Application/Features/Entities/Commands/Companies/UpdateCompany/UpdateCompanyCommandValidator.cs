@@ -11,24 +11,11 @@ namespace Companies.Application.Features.Entities.Commands.Companies.UpdateCompa
 {
     public class UpdateCompanyCommandValidator : AbstractValidator<UpdateCompanyCommand>
     {
-        private readonly ICompanyRepository _context;
-
-        public UpdateCompanyCommandValidator(ICompanyRepository context)
+        public UpdateCompanyCommandValidator()
         {
-            _context = context;
-
             RuleFor(x => x.Model.Name).NotEmpty();
             RuleFor(x => x.Model.Sector).NotEmpty();
             RuleFor(x => x.Model.EmployeesNumber).NotEmpty();
-            When(x => _context.CheckIfCompanyExistAsync(x.CompanyId).Result == false, () =>
-            {
-                RuleFor(x => x.CompanyId).Custom((companyId, context) =>
-                {
-                    context.AddFailure(new ValidationFailure("companyId",
-                                                             $"Company identify by {companyId} does not exist",
-                                                             $"{companyId}"));
-                });
-            });
         }
     }
 }

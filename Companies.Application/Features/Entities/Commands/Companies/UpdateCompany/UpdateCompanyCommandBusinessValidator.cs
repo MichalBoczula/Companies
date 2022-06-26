@@ -8,19 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Companies.Application.Features.Entities.Commands.Companies.DeleteCompany
+namespace Companies.Application.Features.Entities.Commands.Companies.UpdateCompany
 {
-    public class DeleteCompanyCommandValidator : AbstractValidator<DeleteCompanyCommand>
+    public class UpdateCompanyCommandBusinessValidator : AbstractValidator<Company>
     {
         private readonly ICompanyRepository _context;
 
-        public DeleteCompanyCommandValidator(ICompanyRepository context)
+        public UpdateCompanyCommandBusinessValidator(ICompanyRepository context)
         {
             _context = context;
 
-            WhenAsync(async (x, ct) => !await _context.CheckIfCompanyExistAsync(x.CompanyId), () =>
+            WhenAsync(async (x, ct) => !await _context.CheckIfCompanyExistAsync(x.Id), () =>
             {
-                RuleFor(x => x.CompanyId).Custom((companyId, context) =>
+                RuleFor(x => x.Id).Custom((companyId, context) =>
                 {
                     context.AddFailure(new ValidationFailure("companyId",
                                                                 $"Company identify by {companyId} does not exist",
